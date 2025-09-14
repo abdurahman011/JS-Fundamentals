@@ -2,9 +2,6 @@ const factorial = (n) => {
   if (isNaN(n)) {
     return 1;
   }
-  if (n < 0) {
-    return -1; // Factorial is not defined for negative numbers.
-  }
   if (n === 0) {
     return 1;
   }
@@ -12,4 +9,9 @@ const factorial = (n) => {
 };
 
 const num = parseInt(process.argv[2]);
-console.log(factorial(num));
+
+if (isNaN(num)) {
+  console.log("No argument");
+} else {
+  console.log(factorial(num));
+}
